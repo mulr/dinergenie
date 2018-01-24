@@ -18,3 +18,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//RESTAURANTS
+
+Route::get('/restaurants', 'RestaurantsController@index')->name('home');
+
+Route::get('/restaurants/create', 'RestaurantsController@create');
+
+Route::post('/restaurants', 'RestaurantsController@store');
+
+Route::get('/restaurants/{restaurant}', 'RestaurantsController@show');

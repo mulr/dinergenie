@@ -1,9 +1,52 @@
 
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+// // Fonts
+// @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
-// Variables
-@import "variables";
+// // Variables
+// @import "variables";
 
-// Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+// // Bootstrap
+// @import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+/* Move down content because we have a fixed navbar that is 3.5rem tall */
+
+
+html, body {
+  /* padding-top: 3.5rem; */
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+margin-bottom: 0px;
+border-bottom: 1px black;
+}
+
+#main {
+margin-top: 100px;
+}
+
+#logo {
+font-family: 'Fredericka the Great', cursive;
+margin-right: 20px;
+}
+
+h4 {
+color: #8994c6;
+}
+
+.jumbotron, .address{
+background-color: white;
+}
+
+
+#map {
+height: 100%;
+}
+
+.navbar-inner {
+background:transparent;
+}
+
