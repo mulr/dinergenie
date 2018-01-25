@@ -28,3 +28,6 @@ Route::get('/restaurants/create', 'RestaurantsController@create');
 Route::post('/restaurants', 'RestaurantsController@store');
 
 Route::get('/restaurants/{restaurant}', 'RestaurantsController@show');
+
+
+Route::post('/restaurants/{restaurant}/reviews', 'ReviewsController@store');

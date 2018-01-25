@@ -77,7 +77,7 @@ class RestaurantsController extends Controller
 
             
 
-            return redirect('/');
+            return redirect('/restaurants');
 
         }
 
