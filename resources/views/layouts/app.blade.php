@@ -31,6 +31,10 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCv2GzRlwgcTLmU3EZjGhuToBqLISaNj_8&callback=initMap">
+    </script>
+
 </head>
 
 <body>
@@ -39,7 +43,7 @@
  
         @include('layouts.nav')
 
-        @yield('content')
+            @yield('content')
 
         @include('layouts.footer')
 

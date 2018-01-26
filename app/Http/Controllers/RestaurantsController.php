@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Restaurant;
 
+use GMaps;
+
 class RestaurantsController extends Controller
 {
     //Making it so that all routes are locked...except:
@@ -21,10 +23,28 @@ class RestaurantsController extends Controller
     public function index() 
 
         {
+             
+            $config['center'] = 'Orlando, FL';
+            $config['zoom'] = '13';
+            $config['map_height'] = '600px';
+            $config['map_width'] = '100%';
+            $config['scrollwheel'] = 'false';
+        
+            GMaps::initialize($config);
+        
+
+            $marker['position'] = 'Lake Eola Park';
+            $marker['infowindow_content'] = 'Lake Eola Park';
+            // $marker['icon'] = 'http://maps.google.com/mapfiles/ms/micons/orange-dot.png';
+
+            GMaps::add_marker($marker);
+
+
+            $maps = GMaps::create_map();
 
             $restaurants = Restaurant::latest()->get();
 
-            return view('restaurants.index', compact('restaurants'));
+            return view('restaurants.index', compact(['restaurants', 'maps']));
 
         }
 
@@ -73,9 +93,6 @@ class RestaurantsController extends Controller
                 $post->user_id = auth()->id();
 
             $post->save();
-
-
-            
 
             return redirect('/restaurants');
 

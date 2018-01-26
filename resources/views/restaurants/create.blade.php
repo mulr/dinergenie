@@ -86,20 +86,20 @@
                         
                         <div class="form-check col-md-4">
                         
+                            <input class="form-check-input" type="checkbox" id="familyRoomCheck" name="familyRoomCheck">
+                            
+                            <label class="form-check-label" for="gridCheck">Family Restroom</label>
+                        
+                        </div>
+
+                        <div class="form-check col-md-4">
+                        
                             <input class="form-check-input" type="checkbox" id="boosterCheck" name="boosterCheck">
                             
                             <label class="form-check-label" for="gridCheck">Booster Seats</label>
                         
                         </div>
                         
-                        <div class="form-check col-md-4">
-                        
-                            <input class="form-check-input" type="checkbox" id="familyRoomCheck" name="familyRoomCheck">
-                            
-                            <label class="form-check-label" for="gridCheck">Family Restroom</label>
-                        
-                        </div>
-                    
                     </div>
 
                         <br>

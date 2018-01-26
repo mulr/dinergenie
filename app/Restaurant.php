@@ -25,19 +25,4 @@ class Restaurant extends Model
     }
 
 
-
-    public function addReview($body)
-
-    {
-
-        // Review::create([
-            
-        //                 'body' => $body,
-            
-        //                 'restaurant_id' => $this->id 
-                    
-        //             ]);
-
-         $this->reviews()->create(compact('body'));
-    }
 }

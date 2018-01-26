@@ -19,17 +19,9 @@ class ReviewsController extends Controller
         $this->validate(request(), ['body' => 'required|min:2']);
 
 
-        $restaurant->addReview(request('body'));
+        $restaurant->reviews()->create(['user_id'=>request()->user()->id, 'body'=>request()->body ]);
 
-        // Review::create([
-
-        //     'body' => request('body'),
-
-        //     'restaurant_id' => $restaurant->id 
-        
-        // ]);
-
-
+       
         return back();
     }
 
