@@ -14,8 +14,10 @@
         
         <div class="row">
             
-            <div class="col-md-3">              
+            <div class="col-md-3">    
+
                     <!-- Specified Search Drop-down: -->
+                    
                     <form>
 
                         <div class="form-row align-items-center">
@@ -26,7 +28,7 @@
                                 
                                     <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
 
-                                        <option selected>Choose...</option>
+                                        <option selected>All...</option>
             
                                         <option value="1">Changing Table</option>
             
@@ -52,7 +54,7 @@
                 
                                 <div class="col-auto my-1">
                     
-                                    <button type="submit" class="btn btn-primary">Update Results</button>
+                                    <button type="button" class="btn btn-primary">Update Results</button>
                         
                                 </div>
                 

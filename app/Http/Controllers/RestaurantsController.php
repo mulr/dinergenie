@@ -25,20 +25,27 @@ class RestaurantsController extends Controller
         {
              
             $config['center'] = 'Orlando, FL';
-            $config['zoom'] = '13';
+            $config['zoom'] = '12';
             $config['map_height'] = '600px';
             $config['map_width'] = '100%';
             $config['scrollwheel'] = 'false';
+            $config['places'] = 'true';
+            $marker['animation'] = 'DROP';
         
             GMaps::initialize($config);
         
+            $drop_pin = Restaurant::get();
+            
+            // $drop_pin = Restaurant::get()->where('changingtable', 1);
+            // $drop_pin = Restaurant::get()->where('familybathroom', 1);
+            // $drop_pin = Restaurant::get()->where('boosterseats', 1);
 
-            $marker['position'] = 'Lake Eola Park';
-            $marker['infowindow_content'] = 'Lake Eola Park';
-            // $marker['icon'] = 'http://maps.google.com/mapfiles/ms/micons/orange-dot.png';
-
-            GMaps::add_marker($marker);
-
+            foreach ($drop_pin as $pin) {
+                $marker['position'] = $pin->address . $pin->city . $pin->zip;
+                $marker['infowindow_content'] = $pin->name;
+                // $marker['icon'] = 'http://maps.google.com/mapfiles/ms/micons/orange-dot.png';
+                GMaps::add_marker($marker);
+             }
 
             $maps = GMaps::create_map();
 
@@ -52,10 +59,9 @@ class RestaurantsController extends Controller
     public function show(Restaurant $restaurant) 
     
         {
-            //was this, w/ just $restaurant on 26
-            // $restaurant = Restaurant::find($restaurant);
 
             return view('restaurants.restaurant', compact('restaurant'));
+            
         }
     
 
@@ -77,8 +83,6 @@ class RestaurantsController extends Controller
                 'inputState' => 'required',
                 'inputZip' => 'required',
             ]);
-
-                // dd($request->all());
 
             $post = new Restaurant;
 
