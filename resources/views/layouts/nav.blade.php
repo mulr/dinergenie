@@ -1,11 +1,13 @@
 
-<nav class="navbar navbar-expand-md navbar-light bg-white navbar-fixed">
+<nav class="navbar navbar-expand-md navbar-light bg-white navbar-fixed z-depth-5">
 
 <div class="container">
     
-        <a id="logo" class="navbar-brand font-weight-bold" href="/">DG</a>
+        <h4><i class="fa fa-pied-piper" aria-hidden="true"></i></h4>
         
-        <a class="navbar-brand" href="{{ url('/') }}">{{ config('app.name', 'Laravel') }}</a>
+        <!-- <a id="logo" class="navbar-brand font-weight-bold" href="/">DG</a> -->
+        
+        <a class="navbar-brand" href="{{ url('/') }}"> {{ config('app.name', 'Laravel') }} </a>
         
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         
@@ -16,7 +18,9 @@
         <div class="collapse navbar-collapse" id="#">
         
             <ul class="nav navbar-nav navbar-right ml-auto">
+
                 <!-- Authentication Links -->
+
                 @guest
 
                     <li><a href="{{ route('login') }}">Login</a></li>
@@ -55,6 +59,14 @@
                     </li>
 
                 @endguest
+
+                    <li><a href="#" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+            
+                    <li><a href="#" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+            
+                    <li><a href="#" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+            
+                    <li><a href="#" target="_blank" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
 
             </ul>
         

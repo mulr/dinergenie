@@ -10,11 +10,8 @@ body {
 }
 
 .navbar {
-  margin-bottom: 0px;
-}
-
-#main {
-  margin-top: 100px;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 #logo {
@@ -26,16 +23,29 @@ h4 {
   color: #8994c6;
 }
 
-.jumbotron,
-.address {
+.jumbotron {
   background-color: white;
+  margin-top: 3rem;
 }
 
 #map {
-  height: 100%;
+  border: 1px solid #C9C7C7;
+  padding: 0;
 }
 
-.navbar-inner {
-  background: transparent;
+footer {
+  margin-top: 2rem;
+  background-color: white;
+  background-color: rgba(245, 245, 245, 0.2);
+}
+
+#bg-test {
+  background-color: rgba(251, 177, 60, 0.3);
+  border-top: 1px solid #D8D8D8;
+}
+
+#rest-map {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 

@@ -1,18 +1,12 @@
 @extends ('layouts.app')
 
 @section ('content')
-    <head>
-    {!! $maps['js'] !!}
-    </head>
+
+    <head>{!! $maps['js'] !!}</head>
+
     <div class="container">
-
-        <!-- <div class="row">
-
-            <a href="https://placeholder.com"><img src="http://via.placeholder.com/1140x55"></a>
-        
-        </div> -->
-        
-        <div class="row">
+    
+    <div id="rest-map" class="row">
             
             <div class="col-md-3">    
 
@@ -46,8 +40,6 @@
                 
                                         <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
                     
-                                        <!-- <label class="custom-control-label" for="customControlAutosizing">Remember my preference</label> -->
-                    
                                     </div>
                 
                                 </div>
@@ -59,6 +51,7 @@
                                 </div>
                 
                         </div>
+
                     </form>
                 
                 @foreach ($restaurants as $restaurant)
@@ -73,7 +66,9 @@
             
                 <hr>
             
-            <div class="col-md-9">
+            <div id="map" class="col-md-9">
+
+
 
                      {!! $maps['html'] !!}
               
