@@ -10,7 +10,9 @@
 
         <div class="col-md-3">
             
-            <form>
+            <form method="GET" action="/update/amenity">
+
+                {{ csrf_field() }}
 
                 <div class="form-row align-items-center">
 
@@ -22,11 +24,11 @@
 
                             <option selected>Get specific...</option>
 
-                            <option value="1">Changing Table</option>
+                            <option value="changingtable">Changing Table</option>
 
-                            <option value="2">Family-Restroom</option>
+                            <option value="familybathroom">Family-Restroom</option>
 
-                            <option value="3">Booster-Seats</option>
+                            <option value="boosterseats">Booster-Seats</option>
 
                         </select>
 
@@ -44,7 +46,7 @@
     
                     <div class="col-auto my-1">
         
-                        <button type="submit" href="update/changingtable" class="btn update-btn">Update Results</button>
+                        <button type="submit" class="btn update-btn">Update Results</button>
             
                     </div>
         

@@ -36,7 +36,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCv2GzRlwgcTLmU3EZjGhuToBqLISaNj_8&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=".{{ env('GOOGLE_MAPS_API_KEY')}}."&callback=initMap">
     </script>
 
 </head>

@@ -15,7 +15,7 @@ class RestaurantsController extends Controller
 
         {
 
-            $this->middleware('auth')->except(['index', 'show', 'changingtables']);
+            $this->middleware('auth')->except(['index', 'show', 'amenity']);
 
         }
   
@@ -25,7 +25,7 @@ class RestaurantsController extends Controller
         {
              
             $config['center'] = 'Orlando, FL';
-            $config['zoom'] = '12';
+            $config['zoom'] = 'auto';
             $config['map_height'] = '100%';
             $config['map_width'] = '100%';
             $config['scrollwheel'] = 'false';
@@ -35,11 +35,7 @@ class RestaurantsController extends Controller
             GMaps::initialize($config);
         
             $drop_pin = Restaurant::get();
-            
-            //For specific queries to DB:
-            // $drop_pin = Restaurant::get()->where('changingtable', 1);
-            // $drop_pin = Restaurant::get()->where('familybathroom', 1);
-            // $drop_pin = Restaurant::get()->where('boosterseats', 1);
+        
 
             foreach ($drop_pin as $pin) {
                 $marker['position'] = $pin->address . $pin->city . $pin->zip;
@@ -104,12 +100,12 @@ class RestaurantsController extends Controller
         }
 
 
-    public function amenity($amenity)
+    public function amenity(Request $request)
 
         {
-
+            $amenity = $request->search;
             $config['center'] = 'Orlando, FL';
-            $config['zoom'] = '12';
+            $config['zoom'] = 'auto';
             $config['map_height'] = '100%';
             $config['map_width'] = '100%';
             $config['scrollwheel'] = 'false';
