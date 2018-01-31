@@ -15,18 +15,18 @@ class RestaurantsController extends Controller
 
         {
 
-            $this->middleware('auth')->except(['index', 'show']);
+            $this->middleware('auth')->except(['index', 'show', 'changingtables']);
 
         }
   
-    
+        
     public function index() 
 
         {
              
             $config['center'] = 'Orlando, FL';
             $config['zoom'] = '12';
-            $config['map_height'] = '600px';
+            $config['map_height'] = '100%';
             $config['map_width'] = '100%';
             $config['scrollwheel'] = 'false';
             $config['places'] = 'true';
@@ -36,6 +36,7 @@ class RestaurantsController extends Controller
         
             $drop_pin = Restaurant::get();
             
+            //For specific queries to DB:
             // $drop_pin = Restaurant::get()->where('changingtable', 1);
             // $drop_pin = Restaurant::get()->where('familybathroom', 1);
             // $drop_pin = Restaurant::get()->where('boosterseats', 1);
@@ -43,7 +44,7 @@ class RestaurantsController extends Controller
             foreach ($drop_pin as $pin) {
                 $marker['position'] = $pin->address . $pin->city . $pin->zip;
                 $marker['infowindow_content'] = $pin->name;
-                // $marker['icon'] = 'http://maps.google.com/mapfiles/ms/micons/orange-dot.png';
+                $marker['icon'] = '../images/babymark.png';
                 GMaps::add_marker($marker);
              }
 
@@ -102,4 +103,39 @@ class RestaurantsController extends Controller
 
         }
 
-}
+
+    public function amenity($amenity)
+
+        {
+
+            $config['center'] = 'Orlando, FL';
+            $config['zoom'] = '12';
+            $config['map_height'] = '100%';
+            $config['map_width'] = '100%';
+            $config['scrollwheel'] = 'false';
+            $config['places'] = 'true';
+            $marker['animation'] = 'DROP';
+        
+            GMaps::initialize($config);
+            
+            //For specific queries to DB:
+            $drop_pin = Restaurant::get()->where($amenity, 1);
+
+            foreach ($drop_pin as $pin) {
+                $marker['position'] = $pin->address . $pin->city . $pin->zip;
+                $marker['infowindow_content'] = $pin->name;
+                $marker['icon'] = '../images/babymark.png';
+                GMaps::add_marker($marker);
+             }
+
+            $maps = GMaps::create_map();
+
+            $restaurants = Restaurant::latest()->get()->where($amenity, 1);
+
+            return view('restaurants.index', compact(['restaurants', 'maps']));
+
+        }
+        
+
+
+    }

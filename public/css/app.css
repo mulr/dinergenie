@@ -1,8 +1,11 @@
 /* Move down content because we have a fixed navbar that is 3.5rem tall */
 
+#app {
+  margin-top: 4rem;
+}
+
 html,
 body {
-  /* padding-top: 3.5rem; */
   font-family: 'Montserrat', Helvetica, Arial, sans-serif;
   height: 100%;
   margin: 0;
@@ -14,9 +17,26 @@ body {
           box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
+.navbar li {
+  margin-right: 30px;
+}
+
+.navbar h4 {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 #logo {
   font-family: 'Fredericka the Great', cursive;
   margin-right: 20px;
+}
+
+.navbar a {
+  color: black;
+}
+
+.panel-heading {
+  font-family: 'Fredericka the Great', cursive;
 }
 
 h4 {
@@ -33,19 +53,45 @@ h4 {
   padding: 0;
 }
 
+#main-center-tiles {
+  background-color: rgba(242, 220, 174, 0.4);
+  border-top: 1px solid #FFD390;
+  padding: 20px;
+  margin-top: 10px;
+}
+
 footer {
   margin-top: 2rem;
   background-color: white;
   background-color: rgba(245, 245, 245, 0.2);
 }
 
-#bg-test {
-  background-color: rgba(251, 177, 60, 0.3);
-  border-top: 1px solid #D8D8D8;
-}
-
 #rest-map {
   margin-top: 10px;
   margin-bottom: 10px;
+  max-height: 600px;
+}
+
+.restaurant-block {
+  line-height: 1rem;
+  margin-top: 15px;
+}
+
+.restaurant-block p {
+  margin-bottom: 3px;
+}
+
+#restaurant-list {
+  overflow: scroll;
+  height: 562px;
+}
+
+#restaurant-list a {
+  color: #2176ae;
+}
+
+.update-btn {
+  background-color: #2176ae;
+  color: white;
 }
 

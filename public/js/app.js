@@ -10251,6 +10251,8 @@ __webpack_require__(90);
 
 __webpack_require__(115);
 
+console.log('app.js is working');
+
 /***/ }),
 /* 90 */
 /***/ (function(module, exports, __webpack_require__) {

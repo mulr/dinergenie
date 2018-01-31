@@ -1,9 +1,11 @@
 
-<nav class="navbar navbar-expand-md navbar-light bg-white navbar-fixed z-depth-5">
+<nav class="navbar navbar-expand-md navbar-light bg-white fixed-top">
 
 <div class="container">
     
-        <h4><i class="fa fa-pied-piper" aria-hidden="true"></i></h4>
+        <h4><i class="fa fa-comments-o" aria-hidden="true"></i></h4> 
+
+        <!-- <i class="fa fa-pied-piper" aria-hidden="true"></i> -->
         
         <!-- <a id="logo" class="navbar-brand font-weight-bold" href="/">DG</a> -->
         
@@ -25,7 +27,7 @@
 
                     <li><a href="{{ route('login') }}">Login</a></li>
 
-                    <li><a href="{{ route('register') }}">Register</a></li>
+                    <li><a href="{{ route('register') }}">Sign Up</a></li>
 
                 @else
 

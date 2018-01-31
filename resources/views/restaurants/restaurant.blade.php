@@ -18,6 +18,12 @@
 
                 <ul class="list-group">
                     
+                    @if (count($restaurant->reviews) == 0)
+                    
+                        <h4>Looks as though noone has reviewed this restaurant. Care to?</h4>
+        
+                    @endif
+
                     @foreach ($restaurant->reviews as $review)
                     
                         <li class="list-group-item">                  
@@ -36,8 +42,14 @@
 
         <!-- REVIEW ADD SECTION -->
 
+        @guest
+
+            <p class="strong">Make sure to log on to add a review.</p>
+
+        @else
+
         <div class="card">
-            
+                                                
             <div class="card-block">
 
                 <form method="POST" action="/restaurants/{{ $restaurant->id }}/reviews/">
@@ -64,8 +76,9 @@
     
         </div>
 
+        @endguest
+
     </div>
-    
 
 </div>
 
