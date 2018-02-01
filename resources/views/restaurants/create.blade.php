@@ -6,15 +6,7 @@
 
     <div class="row">
 
-        <div class="col-md-4">
-
-            <hr>
-            
-            <a href="https://placeholder.com"><img src="http://via.placeholder.com/355x490"></a>
-    
-        </div>
-
-        <div class="col-md-8">
+        <div class="col-md-10 col-md-offset-2">
 
                 <hr>
 
