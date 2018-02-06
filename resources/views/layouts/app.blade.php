@@ -33,7 +33,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="/css/app.css" rel="stylesheet">
 
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=".{{ env('GOOGLE_MAPS_API_KEY')}}."&callback=initMap">
